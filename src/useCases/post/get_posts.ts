@@ -35,11 +35,12 @@ export async function getPosts(page: number): Promise<IPage<IPost>> {
             page: page
         })
 
-        const posts = response.results.map(post => {
+
+        const posts = response.results.map((post: any) => {
             return {
                 slug: post.uid,
-                title: RichText.asText(post.data.title),
-                description: post.data.description.find(content => content.type === 'paragraph')?.text ?? '',
+                title: RichText.asText(post.data.title) ,
+                description: post.data.description.find((content: any) => content.type === 'paragraph')?.text ?? '',
                 cover: post.data.cover.url,
                 updateAt: new Date(post.last_publication_date).toLocaleDateString('pt-BR', {
                     day: '2-digit',
