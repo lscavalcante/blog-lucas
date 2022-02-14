@@ -1,0 +1,140 @@
+.container {
+    height: 6rem;
+    border-bottom: 1px solid var(--gray-200);
+    background: var(--gray-700);
+}
+
+.content {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 2rem;
+
+    display: flex;
+    align-items: center;
+
+    img {
+        cursor: pointer;
+    }
+
+    nav {
+        margin-left: 5rem;
+        height: 6rem;
+
+        a {
+            position: relative;
+            display: inline-block; // deixar na mesma linha e consegue definir altura e largura
+            padding: 0 0.5rem;
+            height: 6rem;
+            line-height: 6rem;
+            color: var(--gray-100);
+            transition: color 0.2s;
+            font-size: 0.8rem;
+
+            & + a {
+                margin-left: 2rem;
+            }
+
+            &:hover {
+                color: var(--white);
+            }
+
+            &.active {
+                color: var(--yellow-500);
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+.readyButton {
+    margin-left: auto;
+    background: var(--blue-900);
+    height: 3rem;
+    border-radius: 3rem;
+    border: 0;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    color: var(--white);
+    font-weight: bold;
+    transition: filter 0.2s;
+
+    &:hover {
+        filter: brightness(1.1);
+    }
+}
+
+// notebook
+@media (max-width: 900px) {
+    .container {
+        height: 11rem;
+        padding: 0.5rem 0;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        nav {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+
+        }
+
+        .readyButton {
+            display: none;
+        }
+    }
+}
+
+// mobile
+@media (max-width: 481px) {
+    .container {
+        height: 11rem;
+        padding: 0.5rem 0;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+
+        nav {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            
+            a {
+                font-size: 0.7rem;
+            }
+        }
+
+        .readyButton {
+            display: none;
+        }
+    }
+}
+
+// Example position
+// .box {
+//     height: 500px;
+//     width: 500px;
+//     background: red;
+//     position: relative;
+// }
+
+// .box2 {
+//     height: 30px;
+//     width: 30px;
+//     background: greenyellow;
+//     position: absolute;
+//     top: 50%;  /* position the top  edge of the element at the middle of the parent */
+//     left: 50%; /* position the left edge of the element at the middle of the parent */
+//     transform: translate(-50%, -50%);
+// }
+
+// <div className={styles.box}>
+// <div className={styles.box2}>
+
+// </div>
+// </div>
