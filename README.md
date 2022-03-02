@@ -1,6 +1,8 @@
 # Blog Lucas
 ------------------
 
+https://blog-lucas.vercel.app/
+
 It's a personal blog created for practices my skill with next js and prismic.io
 
 ## Detail - WEB
